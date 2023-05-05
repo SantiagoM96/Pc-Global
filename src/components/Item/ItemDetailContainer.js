@@ -28,7 +28,9 @@ const ItemDetailContainer = () => {
       {loading ? (
         <Loader />
       ) : (
-        //se genera una función ubicada en services/utils ya que exige validar cada una de las propiedades para renderizar el mensaje de no existe
+        
+        /* se genera una función que valida todas las propiedades del objeto product e informa al ingresar 
+        en la URL un id inexistente después de item/  un mensaje de producto inexistente*/
         isValidProduct(product)
           ? <ItemDetail {...product} />
           : <div className="noProduct">

@@ -57,10 +57,9 @@ const Checkout = () => {
                     <Link to={`/`} className="yellowBtn orderBtn">view more</Link>
                 </article>
             )}
-            {
-                totalQuantity <= 0 && (
-                    <EmptyCart />
-                )
+            {totalQuantity <= 0 && (
+                <EmptyCart />
+            )
             }
             {!loading && !orderId && totalQuantity > 0 && <CheckoutForm onConfirm={handleCreateOrder} />}
         </section>
