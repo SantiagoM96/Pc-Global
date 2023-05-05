@@ -1,0 +1,51 @@
+@import "../../sass/abstracts/mixins";
+
+.nav {
+  @include flex($justify: space-between);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  padding: 2rem;
+  height: 10vh;
+  width: 100%;
+  z-index: 2;
+  .siteLogo {
+    @include flex($align: left);
+    flex-direction: column;
+    a {
+      font-weight: 800;
+      @include font-size(24px);
+      span {
+        color: var(--primary-color);
+      }
+    }
+    p {
+      @include font-size(12px);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #acacac;
+    }
+  }
+  nav {
+    ul {
+      @include flex();
+      @include media($maxWidth: 900px) {
+        display: none;
+      }
+      li {
+        .navLinks {
+          font-weight: 600;
+          @include font-size(13px);
+          margin: 0.875rem;
+          letter-spacing: 0.063em;
+          text-transform: uppercase;
+          transition: color 0.3s ease-in;
+          &:hover {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+}

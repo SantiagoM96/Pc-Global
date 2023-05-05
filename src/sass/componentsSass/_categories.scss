@@ -1,0 +1,79 @@
+@import "../../sass/abstracts/mixins";
+.categoriesContainer {
+    width: 100%;
+    .categories {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            @include media($maxWidth: 1024px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include media() {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            li {
+                text-align: center;
+                .categoryButton {
+                    @include flex();
+                    padding: 1rem 2rem;
+                    font-family: "Red Hat Text", sans-serif;
+                    font-weight: 600;
+                    @include font-size(12px);
+                    letter-spacing: 0.063em;
+                    text-transform: uppercase;
+                    text-align: center;
+                    border: 1px solid var(--dark);
+                    cursor: pointer;
+                    position: relative;
+                    @include btnBasic;
+                    transition: all 0.2s ease-in;
+                    @include media() {
+                        padding: 0.75rem 1rem;
+                        @include font-size(10px);
+                    }
+                    &:after {
+                        content: "";
+                        background-color: var(--primary-color);
+                        width: 100%;
+                        z-index: -1;
+                        position: absolute;
+                        height: 100%;
+                        top: 7px;
+                        left: 7px;
+                        transition: all 0.2s ease-in;
+                    }
+                    &:hover:after {
+                        top: 0px;
+                        left: 0px;
+                    }
+                }
+                .active {
+                    @include flex();
+                    font-family: "Red Hat Text", sans-serif;
+                    font-weight: 600;
+                    @include font-size(12px);
+                    letter-spacing: 0.063em;
+                    text-transform: uppercase;
+                    padding: 1rem 2rem;
+                    background: none;
+                    border: 1px solid var(--dark);
+                    cursor: pointer;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    background-color: var(--primary-color);
+                    @include media() {
+                        @include font-size(10px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+
+
+ */

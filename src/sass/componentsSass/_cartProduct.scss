@@ -1,0 +1,96 @@
+@import "../../sass/abstracts/_mixins";
+
+.cardItem {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    min-height: 25vh;
+    max-height: 25vh;
+    width: 70vw;
+    padding: 1rem;
+    box-shadow: var(--item-box-shadow);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    @include media($maxWidth: 1024px) {
+        width: 95vw;
+    }
+    @include media($maxWidth: 767px) {
+        gap: 1rem;
+    }
+    @include media() {
+        min-height: 18vh;
+        max-height: 18vh;
+        grid-template-columns: 3fr 4fr 1fr 1fr;
+        padding: 1rem;
+    }
+
+    p {
+        color: var(--grey);
+        @include font-size(20px);
+        letter-spacing: 0.5px;
+        @include media($maxWidth: 1024px) {
+            @include font-size(18px);
+        }
+        @include media($maxWidth: 768px) {
+            @include font-size(14px);
+        }
+        @include media() {
+            @include font-size(12px);
+        }
+    }
+    .span {
+        color: var(--primary-color);
+        font-weight: 800;
+        @include media($maxWidth: 1200px) {
+            display: none;
+        }
+    }
+    a {
+        img {
+            max-width: 170px;
+            height: auto;
+            width: 100%;
+            @include media($maxWidth: 1200px) {
+                max-width: 140px;
+            }
+            @include media($maxWidth: 768px) {
+                max-width: 100px;
+            }
+        }
+    }
+
+    .info {
+        @include flex($align: left);
+        flex-direction: column;
+        gap: 0.75rem;
+        @include media() {
+            gap: 0.2rem;
+        }
+        h4 {
+            font-weight: 800;
+            @include font-size(20px);
+            @include media($maxWidth: 1024px) {
+                @include font-size(18px);
+            }
+            @include media($maxWidth: 768px) {
+                @include font-size(14px);
+            }
+            @include media() {
+                @include font-size(12px);
+            }
+        }
+    }
+    .delete {
+        cursor: pointer;
+        width: 26px;
+        height: 26px;
+        color: var(--dark);
+        @include flex();
+        @include media() {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}

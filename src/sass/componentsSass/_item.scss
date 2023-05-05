@@ -1,0 +1,55 @@
+@import "../../sass/abstracts/mixins";
+
+.itemCard {
+  position: relative;
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  min-width: 16rem;
+  max-width: 20rem;
+  box-shadow: var(--item-box-shadow);
+  transition: all 400ms ease-in-out;
+  &:hover {
+    transform: translateY(-2%);
+  }
+  img {
+    max-height: 150px;
+    max-width: 200px;
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .itemCategory {
+    background-color: var(--dark);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    @include font-size(12px);
+    font-weight: 800;
+    padding: 0.2rem;
+    text-align: center;
+    width: 5rem;
+  }
+  .itemTitle,
+  .itemPrice {
+    font-weight: 800;
+    @include font-size(20px);
+  }
+  .itemPrice {
+    color: var(--primary-color);
+  }
+  .btnItemDetail {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 22px;
+    height: auto;
+    @include btnBasic();
+  }
+}
+.outOfStock {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  &:hover {
+    transform: unset;
+  }
+}

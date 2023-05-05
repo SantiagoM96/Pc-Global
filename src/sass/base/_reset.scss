@@ -1,0 +1,68 @@
+@import "../../sass/abstracts/mixins";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    border-style: none;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--main-font);
+    position: relative;
+    a {
+        color: var(--dark);
+    }
+    .loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include flex();
+        min-height: 100vh;
+        width: 100%;
+        color: var(--primary-color);
+        z-index: 9999;
+    }
+
+    .back {
+        background-color: var(--primary-color);
+        color: #ffffff;
+        border-radius: 0.5rem;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        padding: 0.5rem;
+        top: 0.5rem;
+        left: 2rem;
+        @include media($maxWidth: 1024px) {
+            width: 20px;
+            height: 20px;
+            top: 1rem;
+        }
+        @include media() {
+            width: 18px;
+            height: 18px;
+            padding: 0.2rem;
+            left: 1rem;
+            top: 97%;
+        }
+    }
+    .toastStyle {
+        min-height: 3rem;
+        box-shadow: var(--item-box-shadow);
+        background-color: #e6e5e3;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        @include media() {
+            @include font-size(12px);
+        }
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");

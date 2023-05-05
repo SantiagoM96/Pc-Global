@@ -1,0 +1,27 @@
+@import "../../sass/abstracts/mixins";
+
+.navCart {
+    @include flex();
+    @include btnBasic();
+    width: 60px;
+    height: 40px;
+    border-radius: 1rem;
+    position: relative;
+    img {
+        width: 30px;
+        height: auto;
+    }
+    #counterCart {
+        @include flex();
+        @include font-size(12px);
+        background-color: var(--primary-color);
+        width: 20px;
+        height: 20px;
+        border-radius: 0.5rem;
+        position: absolute;
+        top: -0.2rem;
+        right: 0;
+        box-shadow: #fdcaa5 0px 3px 6px, #fdcaa58b 0px 0px 4px;
+        color: #ffffff;
+    }
+}

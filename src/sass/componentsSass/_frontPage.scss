@@ -1,0 +1,37 @@
+@import "../../sass/abstracts/_mixins";
+
+.frontPage {
+    @include flex($justify: left);
+    height: 60vh;
+    width: 100%;
+    background-image: url("https://i.postimg.cc/MGcvQjm5/background.webp");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fcf6e4;
+    padding: 0 2rem;
+    @include media($maxWidth: 768px) {
+        background-size: 90%;
+    }
+    @include media($maxWidth: 420px) {
+        background-size: 120%;
+        display: none;
+    }
+
+    .frontPageText {
+        @include media($maxWidth: 1024px) {
+            display: none;
+        }
+        color: var(--dark);
+        h2 {
+            font-weight: 600;
+            @include font-size(40px);
+            text-transform: uppercase;
+            color: var(--dark);
+        }
+        p {
+            @include font-size(20px);
+            font-style: italic;
+        }
+    }
+}

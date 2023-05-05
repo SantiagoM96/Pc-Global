@@ -1,0 +1,28 @@
+@mixin flex($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@function countEm($value) {
+    $emValue: calc($value / 16px);
+    @return $emValue * 1em;
+}
+
+@mixin font-size($value) {
+    font-size: countEm($value);
+}
+
+@mixin media($maxWidth: 480px) {
+    @media (max-width: $maxWidth) {
+        @content;
+    }
+}
+
+@mixin btnBasic() {
+    cursor: pointer;
+    background: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}

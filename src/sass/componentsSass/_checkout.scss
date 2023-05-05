@@ -1,0 +1,32 @@
+@import "../../sass/abstracts/mixins";
+
+.checkout {
+    position: relative;
+    min-height: 90vh;
+    width: 100%;
+    @include flex();
+    .order {
+        @include flex();
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        h1 {
+            @include font-size(36px);
+            @include media($maxWidth: 768px) {
+                @include font-size(22px);
+            }
+        }
+        span {
+            color: var(--primary-color);
+        }
+        .orderBtn {
+            width: 30%;
+            @include media($maxWidth: 1024px) {
+                width: 60%;
+            }
+            @include media($maxWidth: 768px) {
+                width: 90%;
+            }
+        }
+    }
+}

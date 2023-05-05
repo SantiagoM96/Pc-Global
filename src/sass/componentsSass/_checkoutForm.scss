@@ -1,0 +1,108 @@
+@import "../../sass/abstracts/_mixins";
+
+.purchase {
+    @include flex();
+    flex-direction: column;
+    padding: 1rem 0;
+    h1 {
+        text-transform: uppercase;
+        padding-bottom: 1rem;
+        color: var(--primary-color);
+        @include font-size(30px);
+        @include media() {
+            @include font-size(24px);
+            padding: 1rem;
+        }
+    }
+}
+.checkoutOrder {
+    @include flex($align: unset);
+    flex-direction: row-reverse;
+    padding: 2rem 0;
+
+    @include media($maxWidth: 1200px) {
+        flex-direction: column;
+    }
+    @include media() {
+        width: 80%;
+    }
+
+    h2 {
+        color: var(--dark);
+        @include font-size(26px);
+        text-transform: uppercase;
+        padding-bottom: 1rem;
+        @include media() {
+            @include font-size(20px);
+        }
+    }
+
+    .orderItems {
+        @include flex($justify: flex-start, $align: flex-start);
+        flex-direction: column;
+        gap: 1rem;
+        border-left: 1px solid var(--grey);
+        padding: 2rem;
+        width: 50%;
+        @include media($maxWidth: 1200px) {
+            width: 100%;
+            padding: 1rem 0;
+            border-left: unset;
+        }
+        p {
+            @include font-size(18px);
+            @include media($maxWidth: 768px) {
+                @include font-size(16px);
+            }
+        }
+        .cardItem {
+            @include flex($justify: space-between);
+            width: 33vw;
+            gap: 4rem;
+            min-height: unset;
+            @include media($maxWidth: 1200px) {
+                width: 80vw;
+                gap: 1rem;
+            }
+            a {
+                display: none;
+            }
+            .delete {
+                display: none;
+            }
+        }
+    }
+
+    .infoCheckout {
+        padding: 2rem;
+        @include media($maxWidth: 1200px) {
+            padding: 1rem 0;
+        }
+        form {
+            width: 100%;
+            .inputField {
+                @include flex($align: left);
+                flex-direction: column;
+                padding: 2rem 0;
+                input {
+                    padding: 0.75rem;
+                    border-bottom: 2px solid var(--primary-color);
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                label {
+                    color: var(--dark);
+                    font-weight: 800;
+                }
+            }
+            .order {
+                width: 100%;
+            }
+            .error {
+                font-weight: 600;
+                color: #e03b3b;
+            }
+        }
+    }
+}

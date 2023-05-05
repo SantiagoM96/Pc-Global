@@ -1,0 +1,36 @@
+@import "../../sass/abstracts/mixins";
+
+.darkBtn,
+.yellowBtn {
+    height: 2.5rem;
+    width: 80%;
+    appearance: none;
+    outline: none;
+    text-transform: uppercase;
+    padding: 0.813rem 1.25rem;
+    border-radius: 0.313rem;
+    @include flex($justify: space-around);
+    @include btnBasic;
+    @include font-size(15px);
+    letter-spacing: 1px;
+    @include media() {
+        @include font-size(11px);
+    }
+}
+
+.darkBtn {
+    background-color: var(--dark);
+    color: #ffffff;
+    .addAndSubstract {
+        color: #ffffff;
+        @include btnBasic;
+        @include font-size(24px);
+    }
+}
+
+.yellowBtn {
+    background-color: var(--primary-color);
+    color: var(--dark);
+    font-weight: 600;
+}
+
