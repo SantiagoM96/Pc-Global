@@ -22,11 +22,11 @@ Finalmente, cuando el usuario completa la compra, la información vinculada a es
 
 ### Justificación de las librerías públicas elegidas
 
-Font Awesome: se utiliza para renderizar algunos de los íconos utilizados. Por ejemplo, la "i" para representar el botón que dirije al detalle del producto y la flecha hacia la izquierda de volver atras.
+**Font Awesome:** se utiliza para renderizar algunos de los íconos utilizados. Por ejemplo, la "i" para representar el botón que dirije al detalle del producto y la flecha hacia la izquierda de volver atras.
 
-React Hot Toast: cumple la función de informar al usuario de las distintas acciones que se van realizando de acuerdo a su accionar. Por ejemplo, si desea agregar un producto ya existente en el carrito le informa que ya fue agregado o también, se utiliza para advertirle de ciertas condiciones que debe cumplir para rellenar el formulario.
+**React Hot Toast:** cumple la función de informar al usuario de las distintas acciones que se van realizando de acuerdo a su accionar. Por ejemplo, si desea agregar un producto ya existente en el carrito le informa que ya fue agregado o también, se utiliza para advertirle de ciertas condiciones que debe cumplir para rellenar el formulario.
 
-UI Ball: se utiliza para informar al usuario que la carga del contenido está en proceso.
+**UI Ball:** se utiliza para informar al usuario que la carga del contenido está en proceso.
 
 Las tres librerías se eligieron en función de ofrecer al usuario una mejor experiencia de uso de la app.
 
@@ -44,30 +44,30 @@ Las tres librerías se eligieron en función de ofrecer al usuario una mejor exp
 
 ## Previsualización
 
-Filtrado por categoría
+**Filtrado por categoría**
 
 ![Animation2](https://user-images.githubusercontent.com/83835085/236347181-c482e60b-f4aa-48d5-b768-19e28d4546cb.gif)
 
 ---
 
-Detalle de Producto y acceso a carrito
+**Detalle de Producto y acceso a carrito**
 
 ![Animation3](https://user-images.githubusercontent.com/83835085/236347311-b311f080-db36-481d-9da1-aa76ce704dbf.gif)
 
 ---
 
-Carrito
+**Carrito**
 
 ![Animation4](https://user-images.githubusercontent.com/83835085/236347633-dc8fa75f-d9ed-4af3-86d5-ddc3292e75c5.gif)
 
 ---
 
-Checkout
+**Checkout**
 
 ![Animation5](https://user-images.githubusercontent.com/83835085/236347374-ae31717c-8d86-4b32-be16-13a607bbd5fe.gif)
 
 ---
-Validaciones de formulario
+**Validaciones de formulario**
 
 ![Animation6](https://user-images.githubusercontent.com/83835085/236347416-f0c5b196-296a-4562-9b04-3179f5b567dc.gif)
 
