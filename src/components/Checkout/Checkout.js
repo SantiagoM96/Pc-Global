@@ -1,7 +1,7 @@
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
 import db from "../../data/services/firebase/firebaseConfig";
 import Loader from "../Loader/Loader";
-
+import EmptyCart from "../Cart/EmptyCart"
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { CartContext } from "../../data/Context/CartContext";
@@ -14,7 +14,7 @@ const Checkout = () => {
     const [loading, setLoading] = useState(false);
     const [orderId, setOrderId] = useState('');
     const [buyerName, setBuyerName] = useState('')
-    const { cart, totalPrice, clearCart } = useContext(CartContext);
+    const { cart, totalPrice, clearCart, totalQuantity } = useContext(CartContext);
 
     const handleCreateOrder = async ({ fullName, phone, email }) => {
         setLoading(true)
@@ -57,7 +57,12 @@ const Checkout = () => {
                     <Link to={`/`} className="yellowBtn orderBtn">view more</Link>
                 </article>
             )}
-            {!loading && !orderId && <CheckoutForm onConfirm={handleCreateOrder} />}
+            {
+                totalQuantity <= 0 && (
+                    <EmptyCart />
+                )
+            }
+            {!loading && !orderId && totalQuantity > 0 && <CheckoutForm onConfirm={handleCreateOrder} />}
         </section>
     );
 }

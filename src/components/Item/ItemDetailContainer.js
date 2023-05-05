@@ -32,10 +32,7 @@ const ItemDetailContainer = () => {
         isValidProduct(product)
           ? <ItemDetail {...product} />
           : <div className="noProduct">
-            <img
-              src="https://i.postimg.cc/Hntxg0TY/empty-Cart.png"
-              alt=""
-              className="emptyCartImg"
+            <img src="https://i.postimg.cc/Hntxg0TY/empty-Cart.png" alt="" className="emptyCartImg"
             />
             <h1>This product doesn't exist</h1>
           </div>
