@@ -21,10 +21,10 @@ const CheckoutForm = ({ onConfirm }) => {
         }
         switch(true) {
             case !fullName || fullName.trim() === '':
-              showToast('error', 'The fields cannot be empty')
+              showToast('error', 'The field cannot be empty')
               break;
-              case !/[a-zA-Z]/.test(fullName):
-                showToast('error', 'The field "full name" cannot be a number')
+              case !/^[a-zA-Z ]+$/.test(fullName):
+                showToast('error', 'The field "full name" can only contain letters and spaces');
                 break;
             case !/^([0-9]{8}|[0-9]{11})$/.test(phone):
               showToast('error', 'Please enter a valid phone number (8 or 11 numbers)')
