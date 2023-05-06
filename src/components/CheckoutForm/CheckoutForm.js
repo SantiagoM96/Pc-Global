@@ -17,17 +17,17 @@ const CheckoutForm = ({ onConfirm }) => {
     const handleConfirm = e => {
         e.preventDefault();
         const userData = {
-            fullName: fullName.trim(), phone: phone.trim(), email: email.trim()
+            fullName: fullName, phone: phone, email: email
         }
         switch(true) {
-            case !fullName:
+            case !fullName || fullName.trim() === '':
               showToast('error', 'The fields cannot be empty')
               break;
               case !/[a-zA-Z]/.test(fullName):
                 showToast('error', 'The field "full name" cannot be a number')
                 break;
             case !/^([0-9]{8}|[0-9]{11})$/.test(phone):
-              showToast('error', 'Please enter a valid phone number (8 or 11 digits)')
+              showToast('error', 'Please enter a valid phone number (8 or 11 numbers)')
               break;
             default:
               onConfirm(userData);
