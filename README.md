@@ -62,14 +62,15 @@ Las tres librerías se eligieron en función de ofrecer al usuario una mejor exp
 
 ---
 
-**Checkout**
-
-![Animation5](https://user-images.githubusercontent.com/83835085/236347374-ae31717c-8d86-4b32-be16-13a607bbd5fe.gif)
-
----
 **Validaciones de formulario**
 
 ![Animation6](https://user-images.githubusercontent.com/83835085/236347416-f0c5b196-296a-4562-9b04-3179f5b567dc.gif)
+
+---
+
+**Checkout**
+
+![Animation5](https://user-images.githubusercontent.com/83835085/236347374-ae31717c-8d86-4b32-be16-13a607bbd5fe.gif)
 
 ---
 

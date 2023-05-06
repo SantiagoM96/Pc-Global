@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
-const ItemDetail = ({ id, name, category, pictureUrl, price, stock, description, }) => {
+const ItemDetail = ({ id, name, category, pictureUrl, price, stock, description }) => {
 
   const [quantityAdded, setQuantityAdded] = useState(0);
-  const { addProduct} = useContext(CartContext);
+  const { addProduct, isInCart} = useContext(CartContext);
 
   const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity);
