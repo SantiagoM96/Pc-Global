@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
       ) : (
         
         /* se genera una función que valida todas las propiedades del objeto product e informa al ingresar 
-        en la URL un id inexistente después de item/  un mensaje de producto inexistente*/
+        en la URL un id inexistente, después de item/,  un mensaje de producto inexistente*/
         isValidProduct(product)
           ? <ItemDetail {...product} />
           : <div className="noProduct">

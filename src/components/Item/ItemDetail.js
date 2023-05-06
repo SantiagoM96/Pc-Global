@@ -8,8 +8,7 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 const ItemDetail = ({ id, name, category, pictureUrl, price, stock, description, }) => {
 
   const [quantityAdded, setQuantityAdded] = useState(0);
-  const { addProduct } = useContext(CartContext);
-
+  const { addProduct} = useContext(CartContext);
 
   const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity);

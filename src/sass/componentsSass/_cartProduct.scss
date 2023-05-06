@@ -50,6 +50,7 @@
     a {
         img {
             max-width: 170px;
+            max-height: 130px;
             height: auto;
             width: 100%;
             @include media($maxWidth: 1200px) {

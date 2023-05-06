@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import { showToast } from "../../animations/showToast";
 import { CartContext } from "../../data/Context/CartContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,6 +19,10 @@ const Cart = () => {
     }, 500);
   }, [])
 
+  const handleClearCart = () => {
+    clearCart();
+    showToast('success', 'Cart Deleted')
+  }
 
   return (
     <section className="cart">
@@ -38,7 +43,7 @@ const Cart = () => {
                 <span>US$ {totalPrice} </span>
               </div>
               <div className="btns">
-                <Button cName="darkBtn clear" label="Delete" callBack={() => clearCart()} />
+                <Button cName="darkBtn clear" label="Delete" callBack={handleClearCart} />
                 <Link to={`/checkout`} className="darkBtn checkOut">
                   Checkout
                 </Link>

@@ -18,31 +18,27 @@ const Checkout = () => {
 
     const handleCreateOrder = async ({ fullName, phone, email }) => {
         setLoading(true)
-
         try {
-
             //se crea el objeto Order con una función
             const objOrder = createObjOrder(fullName, phone, email, cart, totalPrice)
             //obtengo los productos en carrito para utilizar en el update del stock
             const productsInCart = await fetchProductsInCart(cart);
-            //actualizo stock,
+            //actualizo stock
             await updateStock(productsInCart, cart)
             //agrega orden en base de datos y retorno el id de esa orden para luego renderizarla en pantalla al usuario
             const orderId = await addOrder(db, objOrder)
             //muestro en pantalla el id de la orden
             setOrderId(orderId)
-            //renderizo el nombre del comprador en pantalla
+            // y renderizo el nombre del comprador en pantalla
             setBuyerName(fullName)
-
             clearCart()
-
         } catch (err) {
             console.error(err)
         } finally {
             setLoading(false)
         }
-
     }
+    
     return (
         <section className="checkout">
             {loading && (
@@ -57,7 +53,7 @@ const Checkout = () => {
                     <Link to={`/`} className="yellowBtn orderBtn">view more</Link>
                 </article>
             )}
-            {totalQuantity <= 0 && (
+            {totalQuantity <= 0 && !orderId && (
                 <EmptyCart />
             )
             }

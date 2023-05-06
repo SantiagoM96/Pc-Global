@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { showToast } from "../../animations/showToast";
 import { useContext } from "react";
 import { CartContext } from "../../data/Context/CartContext";
 import { Link } from "react-router-dom"
@@ -7,6 +8,11 @@ import { Link } from "react-router-dom"
 const CartProduct = ({ id, name, price, pictureUrl, quantity }) => {
 
     const { removeProduct } = useContext(CartContext);
+
+    const handleRemoveProduct = () => {
+        removeProduct(id)
+        showToast('success', 'Successfully deleted')
+    }
 
     return (
         <div className="cardItem" key={id}>
@@ -20,7 +26,7 @@ const CartProduct = ({ id, name, price, pictureUrl, quantity }) => {
             <div className="quantityAndSubtotal">
                 <p> <span className="span">Subtotal: </span> US${price * quantity}</p>
             </div >
-            <FontAwesomeIcon icon={faTrash} className="delete" onClick={() => removeProduct(id)} />
+            <FontAwesomeIcon icon={faTrash} className="delete" onClick={handleRemoveProduct} />
         </div >
     )
 }
