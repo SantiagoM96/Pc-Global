@@ -16,7 +16,7 @@ const CartProduct = ({ id, name, price, pictureUrl, quantity }) => {
 
     return (
         <div className="cardItem" key={id}>
-            <Link to={`http://localhost:3000/item/${id}`}>
+            <Link to={`/item/${id}`}>
                 <img src={pictureUrl} alt="" />
             </Link>
             <div className="info">
