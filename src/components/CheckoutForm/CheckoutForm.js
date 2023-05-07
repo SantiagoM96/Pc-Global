@@ -55,20 +55,20 @@ return (
                 <p>Before finishing your purchase, complete the following information...</p>
                 <form onSubmit={handleConfirm}>
                     <div className="inputField">
-                        <label>Full Name*</label>
-                        <input type="text" value={fullName} onChange={({ target }) => setFullName(target.value)} placeholder='E.g. Santiago...' />
+                        <label htmlFor="fullName">Full Name*</label>
+                        <input type="text" name='fullName' value={fullName} onChange={({ target }) => setFullName(target.value)} placeholder='E.g. Santiago...' />
                     </div>
                     <div className="inputField">
-                        <label>Phone*</label>
-                        <input type="tel" value={phone} onChange={({ target }) => setPhone(target.value)} placeholder='E.g. 12345678...' />
+                        <label htmlFor="phone">Phone*</label>
+                        <input type="tel" name='phone' value={phone} onChange={({ target }) => setPhone(target.value)} placeholder='E.g. 12345678...' />
                     </div>
                     <div className="inputField">
-                        <label>Email*</label>
-                        <input type="text" value={email} onChange={({ target }) => setEmail(target.value)} placeholder='E.g. santiago@gmail.com...' />
+                        <label htmlFor="email">Email*</label>
+                        <input type="text" name='email' value={email} onChange={({ target }) => setEmail(target.value)} placeholder='E.g. santiago@gmail.com...' />
                     </div>
                     <div className="inputField">
-                        <label>Confirm Email*</label>
-                        <input type="email" value={emailConfirm} onChange={({ target }) => setEmailConfirm(target.value)} />
+                        <label htmlFor="emailConfirm">Confirm Email*</label>
+                        <input type="email" name='emailConfirm' value={emailConfirm} onChange={({ target }) => setEmailConfirm(target.value)} />
                         {email !== emailConfirm && <p className="error">The Emails do not match</p>}
                     </div>
                     {fullName && phone && email && email === emailConfirm &&
