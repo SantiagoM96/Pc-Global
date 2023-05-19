@@ -1,14 +1,14 @@
 import CheckoutForm from "../CheckoutForm/CheckoutForm"
-import db from "../../data/services/firebase/firebaseConfig";
+import db from "../../services/firebase/firebaseConfig";
 import Loader from "../Loader/Loader";
 import EmptyCart from "../Cart/EmptyCart"
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
-import { CartContext } from "../../data/Context/CartContext";
-import { createObjOrder } from "../../data/services/createObjOrder";
-import { fetchProductsInCart } from "../../data/services/getData";
-import { updateStock } from "../../data/services/updateStock";
-import { addOrder } from "../../data/services/addOrder";
+import { CartContext } from "../../Context/CartContext";
+import { createObjOrder } from "../../services/createObjOrder";
+import { fetchProductsInCart } from "../../services/getData";
+import { updateStock } from "../../services/updateStock";
+import { addOrder } from "../../services/addOrder";
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false);

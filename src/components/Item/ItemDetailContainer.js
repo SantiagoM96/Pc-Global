@@ -1,9 +1,9 @@
 import Loader from "../Loader/Loader";
 import ItemDetail from "./ItemDetail";
-import { fetchProductById } from "../../data/services/getData";
+import { fetchProductById } from "../../services/getData";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { isValidProduct } from "../../data/services/utils/isValidProduct";
+import { isValidProduct } from "../../services/utils/isValidProduct";
 
 const ItemDetailContainer = () => {
   const { itemId } = useParams()

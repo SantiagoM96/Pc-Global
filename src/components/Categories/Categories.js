@@ -2,8 +2,6 @@ import { NavLink } from "react-router-dom";
 
 const Categories = () => {
   return (
-    <article className="categoriesContainer" >
-      <nav className="categories">
         <ul>
           <li>
             <NavLink to={"/"} className={({ isActive }) => (isActive ? "active" : "categoryButton")}>All</NavLink>
@@ -24,8 +22,6 @@ const Categories = () => {
             <NavLink to={"/category/mac"} className={({ isActive }) => (isActive ? "active" : "categoryButton")}>Mac</NavLink>
           </li>
         </ul>
-      </nav>
-    </article>
   );
 };
 

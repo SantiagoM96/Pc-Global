@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { showToast } from "../../animations/showToast";
 import { useContext } from "react";
-import { CartContext } from "../../data/Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom"
 
 const CartProduct = ({ id, name, price, pictureUrl, quantity }) => {

@@ -5,7 +5,7 @@ import ItemDetailContainer from "./components/Item/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartProvider } from "./data/Context/CartContext";
+import { CartProvider } from "./Context/CartContext";
 import { Toaster } from "react-hot-toast";
 
 function App() {

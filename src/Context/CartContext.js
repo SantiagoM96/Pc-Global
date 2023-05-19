@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import {showToast} from "../animations/showToast"
 
 export const CartContext = createContext({ cart: [], });
 
@@ -8,7 +9,7 @@ export const CartProvider = ({ children }) => {
 
   const addProduct = (item, quantity) => {
     if (isInCart(item.id)) {
-      console.error('The product is already in the cart, please check it')
+     showToast('error', 'The product is already in the cart, please check it')
     } else {
       setCart((cart) => [...cart, { ...item, quantity }])
     }

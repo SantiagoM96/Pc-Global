@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
-import { CartContext } from "../../data/Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchProductsByCategory } from "../../data/services/getData"
+import { fetchProductsByCategory } from "../../services/getData"
 import ItemList from "./ItemList";
 import Categories from "../Categories/Categories";
 import FrontPage from "../FrontPage/FrontPage";
@@ -31,7 +31,11 @@ const ItemListContainer = ({ greeting }) => {
         <>
           <FrontPage cName="frontPage" title="Quality First" text="Choose PC GLOBAL" />
           <h3>{greeting}</h3>
-          <Categories />
+          <article className="categoriesContainer">
+            <nav className="categories">
+              <Categories />
+            </nav>
+          </article>
           <ItemList products={products} />
         </>
 
