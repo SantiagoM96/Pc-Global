@@ -10,7 +10,6 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
-
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -21,7 +20,6 @@ const ItemDetailContainer = () => {
 
     fetchData();
   }, [itemId]);
-
 
   return (
     <section className="itemDetailContainer">

@@ -1,15 +1,29 @@
-import { createContext, useState } from "react";
-import {showToast} from "../animations/showToast"
+import { createContext, useState, useEffect } from "react";
+import { showToast } from "../animations/showToast"
 
-export const CartContext = createContext({ cart: [], });
+const CartContext = createContext({ cart: [], });
 
-export const CartProvider = ({ children }) => {
-
+const CartProvider = ({ children }) => {
+  const [isInitialized, setIsInitialized] = useState(false);
   const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem("MY_CART");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+      setIsInitialized(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem("MY_CART", JSON.stringify(cart));
+    }
+  }, [cart, isInitialized]);
 
   const addProduct = (item, quantity) => {
     if (isInCart(item.id)) {
-     showToast('error', 'The product is already in the cart, please check it')
+      showToast('error', 'The product is already in the cart, please check it')
     } else {
       setCart((cart) => [...cart, { ...item, quantity }])
     }
@@ -38,3 +52,5 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+export { CartProvider, CartContext };
