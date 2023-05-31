@@ -14,7 +14,7 @@ Finalmente, cuando el usuario completa la compra, la información vinculada a es
 
 | Nombre          | Funcionalidad                    |
 | --------------- | -------------------------------- |
-| Firebase        | Auntentificación y base de datos |
+| Firebase        | Base de datos                    |
 | Font Awesome    | Iconos                           |
 | React Router    | Router                           |
 | React Hot Toast | Notificaciones                   |
